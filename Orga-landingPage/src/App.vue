@@ -9,6 +9,8 @@ import PourquoiChoisir from './components/PourquoiChoisir.vue'
 import Team from './components/Team.vue'
 import Traction from './components/Traction.vue'
 import Testimonial from './components/Testimonial.vue'
+import Footer from './components/Footer.vue'
+import CTASection from './components/CTASection.vue'
 </script>
 
 <template>
@@ -21,6 +23,8 @@ import Testimonial from './components/Testimonial.vue'
   <Traction />
   <Team />
   <Testimonial />
+  <CTASection />
+  <Footer />
 </template>
 
 <style scoped></style>
