@@ -1,69 +1,47 @@
 <template>
-  <div class="py-16 px-6">
-    <div class="max-w-7xl mx-auto">
+  <div class="py-4 px-20">
+    <div class="w-full mx-auto">
       <!-- Header -->
       <div class="mb-16">
-        <h1 class="text-5xl font-bold text-white mb-6">Nos Solutions</h1>
-        <p class="text-gray-400 text-lg max-w-2xl">
+        <h1 class="text-5xl font-bold text-white mb-4">Nos Solutions</h1>
+        <p class="text-gray-400 text-2xl max-w-2xl font-semibold">
           OrgaAfrica regroupe tout ce dont un restaurant a besoin dans un système unique et
           connecté.
         </p>
       </div>
 
       <!-- SECTION 1 -->
-      <!-- Solutions -->
-      <div class="space-y-50">
-        <SolutionCard
-          v-for="solution in firstSolutions"
-          :key="solution.title"
-          :title="solution.title"
-          :description="solution.description"
-        />
-      </div>
-
-      <!-- Mobile Mockups -->
-      <div
-        class="relative flex justify-center items-center transform -translate-y-12/12 -translate-x-10"
-      >
-        <div class="relative z-20">
-          <img src="/Mobile Screen 4.png" alt="OrgaAfrica Mobile App" class="w-auto h-auto" />
-        </div>
-
-        <div class="absolute top-12 left-1/2 transform translate-x-20 rotate-1 z-10">
-          <img
-            src="/Mobile Screen 2.png"
-            alt="OrgaAfrica Mobile App"
-            class="w-auto h-auto opacity-90"
-          />
-        </div>
-      </div>
-
-      <!-- SECTION 2 -->
-      <div class="grid lg:grid-cols-2 items-center gap-12 -mt-8 md:-mt-12">
-        <!-- Mobile Mockups (À DROITE) -->
-        <div class="relative flex justify-center items-center">
-          <!-- Phone principal -->
-          <div class="relative z-20">
-            <img src="/Mobile Screen 1.png" alt="OrgaAfrica Mobile App" class="w-auto h-auto" />
-          </div>
-
-          <!-- Phone secondaire -->
-          <div class="absolute z-10 -left-10 top-16 -rotate-1 opacity-90">
-            <img
-              src="/Mobile Screen 2 (1).png"
-              alt="OrgaAfrica Mobile App"
-              class="w-auto h-auto transform -translate-x-48 -translate-y-8"
+      <div class="flex flex-col gap-64">
+        <div class="flex justify-between items-center">
+          <div class="space-y-50">
+            <SolutionCard
+              v-for="solution in firstSolutions"
+              :key="solution.title"
+              :title="solution.title"
+              :description="solution.description"
             />
           </div>
+
+          <!-- Mobile Mockups -->
+          <div class="relative flex justify-center items-center">
+            <img src="/public/image 14.png" alt="" />
+          </div>
         </div>
-        <!-- Solutions (À GAUCHE) -->
-        <div class="space-y-50">
-          <SolutionCard
-            v-for="solution in secondSolutions"
-            :key="solution.title"
-            :title="solution.title"
-            :description="solution.description"
-          />
+
+        <!-- SECTION 2 -->
+        <div class="flex justify-between items-center">
+          <!-- Mobile Mockups -->
+          <div class="relative flex justify-center items-center">
+            <img src="/public/image 17.png" alt="" />
+          </div>
+          <div class="space-y-50">
+            <SolutionCard
+              v-for="solution in secondSolutions"
+              :key="solution.title"
+              :title="solution.title"
+              :description="solution.description"
+            />
+          </div>
         </div>
       </div>
     </div>
