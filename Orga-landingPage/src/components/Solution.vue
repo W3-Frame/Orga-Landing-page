@@ -1,4 +1,6 @@
 <template>
+  <img src="/public/Group 2.png" alt="" class="absolute transform translate-y-6/6 z-0 max-w-xl" />
+
   <div class="py-4 px-20">
     <div class="w-full mx-auto">
       <!-- Header -->
@@ -12,7 +14,7 @@
 
       <!-- SECTION 1 -->
       <div class="flex flex-col gap-64">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center z-10">
           <div class="space-y-50">
             <SolutionCard
               v-for="solution in firstSolutions"
@@ -27,9 +29,8 @@
             <img src="/public/image 14.png" alt="" />
           </div>
         </div>
-
         <!-- SECTION 2 -->
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center z-10">
           <!-- Mobile Mockups -->
           <div class="relative flex justify-center items-center">
             <img src="/public/image 17.png" alt="" />

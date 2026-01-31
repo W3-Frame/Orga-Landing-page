@@ -25,16 +25,16 @@ const profileSolutions: ProfileSolution[] = [
 </script>
 
 <template>
-  <div class="text-white py-16 px-8">
-    <div class="max-w-7xl mx-auto">
+  <div class="text-white py-16 px-8 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative">
       <h1 class="text-5xl font-bold mb-16">Solutions par profil</h1>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center z-10">
         <div class="bg-[#FC0A02] rounded-4xl">
           <img src="/public/Rectangle 4221.png" alt="" class="w-full h-full object-cover" />
         </div>
 
-        <div class="space-y-6">
+        <div class="space-y-6 z-10">
           <div
             v-for="profile in profileSolutions"
             :key="profile.title"
@@ -68,6 +68,11 @@ const profileSolutions: ProfileSolution[] = [
           </button>
         </div>
       </div>
+      <img
+        src="/public/Group 2.png"
+        alt=""
+        class="absolute right-0 top-1/2 translate-y-1/4 translate-x-4/4 z-0 max-w-[16%]"
+      />
     </div>
   </div>
 </template>
