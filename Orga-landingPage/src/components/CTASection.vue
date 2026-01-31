@@ -20,7 +20,7 @@ import StoreButtons from './StoreButtons.vue'
             <StoreButtons class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6" />
             <div>
               <button
-                class="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-5 rounded-lg transition-all duration-300 transform hover:scale-105"
+                class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Demander une démo
               </button>
