@@ -87,7 +87,7 @@
       <!-- ===== HAMBURGER (visible sur mobile uniquement) ===== -->
       <button
         type="button"
-        @click="toggleMobileMenu"
+        @click.stop="toggleMobileMenu"
         class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] cursor-pointer"
         aria-label="Menu"
         :aria-expanded="isMobileOpen"
@@ -116,6 +116,7 @@
       en CSS sans JS forcé. max-h-0 → max-h-[400px] avec transition.
     -->
     <div
+      @click.stop
       class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
       :class="isMobileOpen ? 'max-h-[400px] opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'"
     >
@@ -248,7 +249,12 @@ const closeMobileMenu = () => {
 }
 
 // ─── Click outside → fermer tout ─────────────────────
-const handleClickOutside = () => {
+const handleClickOutside = (event: Event) => {
+  // Ne pas fermer si on clique sur la navbar elle-même
+  const target = event.target as HTMLElement
+  if (target.closest('nav')) {
+    return
+  }
   isLanguageOpen.value = false
   isMobileOpen.value = false
 }

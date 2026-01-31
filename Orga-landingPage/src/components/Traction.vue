@@ -94,22 +94,22 @@ const getIconPath = (iconType: string): string => {
           </div>
 
           <!-- Boutons Store - collés aux traction items -->
-          <div class="flex flex-col lg:flex-row items-start gap-4 pt-4 transform translate-y-36">
+          <div class="flex flex-col sm:flex-row items-start gap-4 pt-4">
             <StoreButtons class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center" />
           </div>
         </div>
       </div>
 
-      <!-- Image du téléphone - en dessous, collée -->
-      <div class="flex justify-start mt-0 lg:-mt-80 transform -translate-y-20 translate-x-36">
-        <div class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
+      <!-- Image du téléphone - en dessous -->
+      <!-- <div class="flex justify-center lg:justify-start mt-8 lg:mt-0">
+        <div class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
           <img
             src="/public/E2.png"
             alt="Application Orga Pro"
             class="w-full h-auto object-contain"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
