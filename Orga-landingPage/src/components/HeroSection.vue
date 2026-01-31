@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <section
     class="min-h-screen bg-black px-8 pt-20 flex items-center justify-center relative overflow-hidden"

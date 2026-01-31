@@ -72,8 +72,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 interface TeamMember {
   id: number
   name: string
@@ -84,7 +82,7 @@ interface TeamMember {
   instagram?: string
 }
 
-const teamMembers = ref<TeamMember[]>([
+const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Andrey TOGBE',
@@ -116,5 +114,5 @@ const teamMembers = ref<TeamMember[]>([
     image:
       'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
-])
+]
 </script>

@@ -10,7 +10,7 @@ interface Testimonial {
   rating: number
 }
 
-const testimonials = ref<Testimonial[]>([
+const testimonials: Testimonial[] = [
   {
     id: 1,
     name: 'Faisal Ahmed',
@@ -65,12 +65,12 @@ const testimonials = ref<Testimonial[]>([
     text: "Les files d'attente ont presque disparu. Les clients commandent plus vite et nous servons mieux.",
     rating: 4,
   },
-])
+]
 
 const currentIndex = ref(0)
 
 const nextSlide = () => {
-  if (currentIndex.value < testimonials.value.length - 3) {
+  if (currentIndex.value < testimonials.length - 3) {
     currentIndex.value++
   }
 }

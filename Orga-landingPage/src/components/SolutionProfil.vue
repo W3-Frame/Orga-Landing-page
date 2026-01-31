@@ -1,4 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface ProfileSolution {
+  title: string
+  description: string
+  inlineText: boolean
+}
+
+const profileSolutions: ProfileSolution[] = [
+  {
+    title: 'Pour les restaurants :',
+    description: "Augmentez vos revenus, réduisez l'attente et reprenez le contrôle.",
+    inlineText: true,
+  },
+  {
+    title: 'Pour les vendeurs & commerçants informels :',
+    description: 'Passez au digital sans matériel ni complexité.',
+    inlineText: false,
+  },
+  {
+    title: 'Pour les entreprises :',
+    description: 'Offrez des avantages repas intelligents et maîtrisez les dépenses.',
+    inlineText: false,
+  },
+]
+</script>
 
 <template>
   <div class="bg-black text-white py-16 px-8">
@@ -12,52 +36,32 @@
 
         <div class="space-y-6">
           <div
+            v-for="profile in profileSolutions"
+            :key="profile.title"
             class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all"
           >
             <div class="flex items-start gap-4">
-              <div class="">
+              <div v-if="profile.inlineText">
                 <div class="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center">
                   <span class="text-white font-bold text-xl">8</span>
                 </div>
               </div>
-              <div>
-                <h3 class="text-xl font-bold mb-2">Pour les restaurants :</h3>
-                <p class="text-gray-300 leading-relaxed">
-                  Augmentez vos revenus, réduisez l'attente et reprenez le contrôle.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all"
-          >
-            <div class="flex items-start gap-4">
-              <div class="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center">
+              <div
+                v-else
+                class="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center"
+              >
                 <span class="text-white font-bold text-xl">8</span>
               </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold mb-2">Pour les vendeurs & commerçants informels :</h3>
-              <p class="text-gray-300 leading-relaxed">
-                Passez au digital sans matériel ni complexité.
-              </p>
-            </div>
-          </div>
 
-          <div
-            class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all"
-          >
-            <div class="flex items-start gap-4">
-              <div class="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center">
-                <span class="text-white font-bold text-xl">8</span>
+              <div v-if="profile.inlineText">
+                <h3 class="text-xl font-bold mb-2">{{ profile.title }}</h3>
+                <p class="text-gray-300 leading-relaxed">{{ profile.description }}</p>
               </div>
             </div>
-            <div>
-              <h3 class="text-xl font-bold mb-2">Pour les entreprises :</h3>
-              <p class="text-gray-300 leading-relaxed">
-                Offrez des avantages repas intelligents et maîtrisez les dépenses.
-              </p>
+
+            <div v-if="!profile.inlineText">
+              <h3 class="text-xl font-bold mb-2">{{ profile.title }}</h3>
+              <p class="text-gray-300 leading-relaxed">{{ profile.description }}</p>
             </div>
           </div>
 

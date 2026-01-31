@@ -13,21 +13,12 @@
       <!-- SECTION 1 -->
       <!-- Solutions -->
       <div class="space-y-50">
-        <div
+        <SolutionCard
           v-for="solution in firstSolutions"
           :key="solution.title"
-          class="bg-black rounded-xl p-6 border border-zinc-800 transition-all max-w-[350px]"
-        >
-          <div class="flex items-start gap-3 mb-3">
-            <img src="/gg_check-o.png" alt="check" class="w-6 h-6 flex-shrink-0 mt-1" />
-            <h3 class="text-base font-semibold text-white">
-              {{ solution.title }}
-            </h3>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            {{ solution.description }}
-          </p>
-        </div>
+          :title="solution.title"
+          :description="solution.description"
+        />
       </div>
 
       <!-- Mobile Mockups -->
@@ -48,7 +39,7 @@
       </div>
 
       <!-- SECTION 2 -->
-      <div class="grid lg:grid-cols-2 items-center gap-12">
+      <div class="grid lg:grid-cols-2 items-center gap-12 -mt-8 md:-mt-12">
         <!-- Mobile Mockups (À DROITE) -->
         <div class="relative flex justify-center items-center">
           <!-- Phone principal -->
@@ -67,21 +58,12 @@
         </div>
         <!-- Solutions (À GAUCHE) -->
         <div class="space-y-50">
-          <div
+          <SolutionCard
             v-for="solution in secondSolutions"
             :key="solution.title"
-            class="bg-black rounded-xl p-6 border border-zinc-800 transition-all max-w-[350px]"
-          >
-            <div class="flex items-start gap-3 mb-3">
-              <img src="/gg_check-o.png" alt="check" class="w-6 h-6 flex-shrink-0 mt-1" />
-              <h3 class="text-base font-semibold text-white">
-                {{ solution.title }}
-              </h3>
-            </div>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              {{ solution.description }}
-            </p>
-          </div>
+            :title="solution.title"
+            :description="solution.description"
+          />
         </div>
       </div>
     </div>
@@ -89,7 +71,14 @@
 </template>
 
 <script setup lang="ts">
-const firstSolutions = [
+import SolutionCard from './SolutionCard.vue'
+
+interface SolutionItem {
+  title: string
+  description: string
+}
+
+const firstSolutions: SolutionItem[] = [
   {
     title: 'Paiements digitaux sécurisés et rapides',
     description:
@@ -102,7 +91,7 @@ const firstSolutions = [
   },
 ]
 
-const secondSolutions = [
+const secondSolutions: SolutionItem[] = [
   {
     title: 'POS simple et efficace',
     description:

@@ -40,7 +40,13 @@
 </template>
 
 <script setup lang="ts">
-const modules = [
+interface PlatformModule {
+  title: string
+  description: string
+  items: string[]
+}
+
+const modules: PlatformModule[] = [
   {
     title: "Commandes & Gestion de file d'attente",
     description: 'Permettez aux clients de commander sans attendre.',
