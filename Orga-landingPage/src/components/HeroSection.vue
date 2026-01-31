@@ -2,7 +2,7 @@
 
 <template>
   <section
-    class="min-h-screen bg-black px-8 py-20 flex items-center justify-center relative overflow-hidden"
+    class="min-h-screen bg-black px-8 pt-20 flex items-center justify-center relative overflow-hidden"
   >
     <div class="max-w-6xl w-full">
       <!-- Badge utilisateurs -->
