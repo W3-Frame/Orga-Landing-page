@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="bg-black text-white py-20 px-8">
     <div class="max-w-7xl mx-auto">

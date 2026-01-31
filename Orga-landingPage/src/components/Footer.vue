@@ -1,7 +1,7 @@
 <template>
   <footer class="text-white bg-[#191919]">
-    <div class="w-full mx-auto px-6 md:px-12 lg:px-24 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <div class="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-10 md:py-16">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
         <div>
           <h3 class="text-lg font-bold mb-4">OrgaAfrica</h3>
           <p class="text-white text-sm leading-relaxed">
@@ -91,5 +91,3 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts"></script>

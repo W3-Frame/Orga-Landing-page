@@ -10,7 +10,7 @@ interface Testimonial {
   rating: number
 }
 
-const testimonials = ref<Testimonial[]>([
+const testimonials: Testimonial[] = [
   {
     id: 1,
     name: 'Faisal Ahmed',
@@ -65,12 +65,12 @@ const testimonials = ref<Testimonial[]>([
     text: "Les files d'attente ont presque disparu. Les clients commandent plus vite et nous servons mieux.",
     rating: 4,
   },
-])
+]
 
 const currentIndex = ref(0)
 
 const nextSlide = () => {
-  if (currentIndex.value < testimonials.value.length - 3) {
+  if (currentIndex.value < testimonials.length - 3) {
     currentIndex.value++
   }
 }
@@ -83,40 +83,44 @@ const prevSlide = () => {
 </script>
 
 <template>
-  <section class="bg-black text-white py-16 px-6 md:px-12 lg:px-24">
+  <section class="bg-black text-white py-10 md:py-16 px-4 sm:px-6 md:px-12 lg:px-24">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold mb-16">Témoignages</h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-16">Témoignages</h2>
 
       <div class="relative">
         <div class="overflow-hidden">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-transform duration-500 ease-in-out"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 transition-transform duration-500 ease-in-out"
             :style="{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }"
           >
             <div
               v-for="testimonial in testimonials"
               :key="testimonial.id"
-              class="bg-gradient-to-br from-red-950/40 to-red-900/20 rounded-3xl p-6 border border-red-900/30 hover:border-red-700/50 transition-all duration-300 hover:scale-105 flex-shrink-0"
+              class="bg-gradient-to-br from-red-950/40 to-red-900/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-red-900/30 hover:border-red-700/50 transition-all duration-300 hover:scale-105 flex-shrink-0"
             >
-              <div class="flex items-center space-x-3 mb-4">
+              <div class="flex items-center space-x-3 mb-3 sm:mb-4">
                 <img
                   :src="testimonial.avatar"
                   :alt="testimonial.name"
-                  class="w-12 h-12 rounded-full object-cover border-2 border-red-500/30"
+                  class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-red-500/30"
                 />
                 <div>
-                  <h3 class="font-semibold text-white">{{ testimonial.name }}</h3>
-                  <p class="text-sm text-gray-400">{{ testimonial.username }}</p>
+                  <h3 class="font-semibold text-white text-sm sm:text-base">
+                    {{ testimonial.name }}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-gray-400">{{ testimonial.username }}</p>
                 </div>
               </div>
 
-              <p class="text-gray-300 mb-4 leading-relaxed">{{ testimonial.text }}</p>
+              <p class="text-gray-300 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
+                {{ testimonial.text }}
+              </p>
 
               <div class="flex space-x-1">
                 <svg
                   v-for="i in 5"
                   :key="i"
-                  class="w-5 h-5"
+                  class="w-4 h-4 sm:w-5 sm:h-5"
                   :class="i <= testimonial.rating ? 'text-yellow-400' : 'text-gray-600'"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -130,13 +134,18 @@ const prevSlide = () => {
           </div>
         </div>
 
-        <div class="flex justify-end space-x-4 mt-8">
+        <div class="flex justify-center sm:justify-end space-x-4 mt-6 sm:mt-8">
           <button
             @click="prevSlide"
             :disabled="currentIndex === 0"
-            class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              class="w-5 h-5 sm:w-6 sm:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -148,9 +157,14 @@ const prevSlide = () => {
           <button
             @click="nextSlide"
             :disabled="currentIndex >= testimonials.length - 3"
-            class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              class="w-5 h-5 sm:w-6 sm:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"

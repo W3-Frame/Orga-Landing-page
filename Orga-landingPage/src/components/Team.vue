@@ -1,9 +1,11 @@
 <template>
-  <section class="py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+  <section class="py-10 md:py-16 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">L'Équipe</h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16 text-white">
+        L'Équipe
+      </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         <div v-for="member in teamMembers" :key="member.id" class="group relative">
           <div
             class="relative rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl"
@@ -72,8 +74,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 interface TeamMember {
   id: number
   name: string
@@ -84,7 +84,7 @@ interface TeamMember {
   instagram?: string
 }
 
-const teamMembers = ref<TeamMember[]>([
+const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Andrey TOGBE',
@@ -116,5 +116,5 @@ const teamMembers = ref<TeamMember[]>([
     image:
       'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
-])
+]
 </script>
