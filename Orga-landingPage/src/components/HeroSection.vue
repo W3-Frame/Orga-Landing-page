@@ -132,7 +132,9 @@
   </div>
 
   <!-- ══ GRAND ÉCRAN (≥lg) : layout exact de référence ══ -->
-  <div class="hidden lg:flex justify-center items-end relative -mt-[26%] px-1 gap-0">
+  <div
+    class="hidden lg:flex justify-center items-end relative -mt-[26%] lg:-mt-[16%] md:-mt-[10%] px-1 gap-0"
+  >
     <!-- Left Phone -->
     <div class="relative z-10">
       <img src="/public/orgaR 1.png" alt="Orga App Left" class="translate-x-14" />
