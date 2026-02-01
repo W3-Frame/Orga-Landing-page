@@ -3,9 +3,7 @@ import StoreButtons from './StoreButtons.vue'
 </script>
 
 <template>
-  <section
-    class="relative bg-black text-white py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
-  >
+  <section class="relative bg-black text-white px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
     <div class="absolute inset-0 opacity-20">
       <div
         class="absolute -top-40 -right-40 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-red-500 rounded-full blur-3xl"
