@@ -1,21 +1,23 @@
 <template>
-  <img src="/public/Group 2.png" alt="" class="absolute transform translate-y-6/6 z-0 max-w-xl" />
+  <img src="/public/Group 2.png" alt="" class="absolute transform translate-y-6/6 z-0 max-w-xl hidden lg:block" />
 
-  <div class="py-4 px-20">
-    <div class="w-full mx-auto">
+  <div class="py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-12 xl:px-20">
+    <div class="w-full max-w-7xl mx-auto">
       <!-- Header -->
-      <div class="mb-16">
-        <h1 class="text-5xl font-bold text-white mb-4">Nos Solutions</h1>
-        <p class="text-gray-400 text-2xl max-w-2xl font-semibold">
+      <div class="mb-8 sm:mb-12 lg:mb-16">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">Nos Solutions</h1>
+        <p class="text-gray-400 text-base sm:text-lg lg:text-2xl max-w-2xl font-semibold">
           OrgaAfrica regroupe tout ce dont un restaurant a besoin dans un système unique et
           connecté.
         </p>
       </div>
 
       <!-- SECTION 1 -->
-      <div class="flex flex-col gap-64">
-        <div class="flex justify-between items-center z-10">
-          <div class="space-y-50">
+      <div class="flex flex-col gap-12 sm:gap-16 lg:gap-32 xl:gap-64">
+        <!-- Solution 1 avec mockup -->
+        <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start z-10 gap-6 sm:gap-8 lg:gap-0">
+          <!-- Cartes Solutions -->
+          <div class="space-y-4 sm:space-y-6 lg:space-y-8 w-full lg:w-auto">
             <SolutionCard
               v-for="solution in firstSolutions"
               :key="solution.title"
@@ -25,17 +27,20 @@
           </div>
 
           <!-- Mobile Mockups -->
-          <div class="relative flex justify-center items-center">
-            <img src="/public/image 14.png" alt="" />
+          <div class="relative flex justify-center items-center flex-shrink-0 w-full lg:w-auto">
+            <img src="/public/image 14.png" alt="" class="w-full max-w-xs sm:max-w-sm lg:max-w-md" />
           </div>
         </div>
-        <!-- SECTION 2 -->
-        <div class="flex justify-between items-center z-10">
+
+        <!-- Solution 2 avec mockup -->
+        <div class="flex flex-col-reverse lg:flex-row justify-between items-center lg:items-start z-10 gap-6 sm:gap-8 lg:gap-0">
           <!-- Mobile Mockups -->
-          <div class="relative flex justify-center items-center">
-            <img src="/public/image 17.png" alt="" />
+          <div class="relative flex justify-center items-center flex-shrink-0 w-full lg:w-auto">
+            <img src="/public/image 17.png" alt="" class="w-full max-w-xs sm:max-w-sm lg:max-w-md" />
           </div>
-          <div class="space-y-50">
+
+          <!-- Cartes Solutions -->
+          <div class="space-y-4 sm:space-y-6 lg:space-y-8 w-full lg:w-auto">
             <SolutionCard
               v-for="solution in secondSolutions"
               :key="solution.title"
