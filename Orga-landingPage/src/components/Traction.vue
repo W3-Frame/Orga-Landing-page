@@ -94,8 +94,8 @@ const getIconPath = (iconType: string): string => {
           </div>
 
           <!-- Boutons Store - collés aux traction items -->
-          <div class="flex flex-col sm:flex-row items-start gap-4 pt-4">
-            <StoreButtons class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center" />
+          <div class="flex flex-col items-center sm:text-left justify-between gap-4 pt-4">
+            <StoreButtons class="flex sm:flex-row gap-3 sm:gap-4 items-center" />
           </div>
         </div>
       </div>
