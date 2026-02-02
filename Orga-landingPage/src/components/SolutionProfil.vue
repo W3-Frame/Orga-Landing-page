@@ -60,12 +60,13 @@ const profileSolutions: ProfileSolution[] = [
               </div>
             </div>
           </div>
-
+          <div class="flex items-center justify-center w-full sm:w-auto">
           <button
-            class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-2xl transition-colors text-lg shadow-lg shadow-red-900/50"
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-2xl transition-colors text-lg shadow-lg shadow-red-900/50 "
           >
             Télécharger
           </button>
+          </div>
         </div>
       </div>
       <img
